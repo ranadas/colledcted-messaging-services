@@ -21,8 +21,10 @@
     </properties>
 
     <modules>
-        <module>spring-jms-activemq</module>
-        <module>spring-jms-producer</module>
+        <module>spring-datagrid-service</module>
+        <module>spring-datagrid-listener</module>
+<!--        <module>spring-jms-activemq</module>-->
+<!--        <module>spring-jms-producer</module>-->
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -43,6 +45,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
+                    <release>${java.version}</release>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
