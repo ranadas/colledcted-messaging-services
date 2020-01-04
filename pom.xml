@@ -23,8 +23,7 @@
     <modules>
         <module>spring-datagrid-service</module>
         <module>spring-datagrid-listener</module>
-<!--        <module>spring-jms-activemq</module>-->
-<!--        <module>spring-jms-producer</module>-->
+        <module>rpt-01-api-service</module>
     </modules>
     <dependencyManagement>
         <dependencies>
