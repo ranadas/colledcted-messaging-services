@@ -6,3 +6,7 @@ server:
 spring:
   application:
     name: reporting-api-service
+
+reporting:
+  queues:
+    control-queue-name: REA_QUEUE
