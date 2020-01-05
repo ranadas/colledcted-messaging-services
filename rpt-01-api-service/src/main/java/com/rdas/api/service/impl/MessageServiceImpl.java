@@ -2,6 +2,7 @@ package com.rdas.api.service.impl;
 
 import com.rdas.api.service.MessageService;
 import com.rdas.common.message.model.ControlMessage;
+import com.rdas.common.message.observables.impl.ControlMessagePublisher;
 import org.springframework.stereotype.Service;
 
 @Service
