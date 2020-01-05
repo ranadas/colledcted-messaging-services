@@ -5,7 +5,7 @@ import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IQueue;
 import com.hazelcast.core.ItemEvent;
 import com.hazelcast.core.ItemListener;
-import com.rdas.common.message.model.ControlMessage;
+import com.rdas.common.message.model.DatagenMessage;
 import com.rdas.common.message.model.DatagridConfigProperties;
 import com.rdas.common.message.model.ReportMessage;
 import com.rdas.common.message.observables.MessagePublisher;
@@ -14,27 +14,27 @@ import org.springframework.stereotype.Service;
 
 @Log4j2
 @Service
-public final class ControlMessagePublisher<T extends ReportMessage> implements MessagePublisher<ControlMessage> {
+public final class DatagenMessagePublisher<T extends ReportMessage> implements MessagePublisher<DatagenMessage> {
 
-    private IQueue<ControlMessage> controlMessageQueue;
+    private IQueue<DatagenMessage> controlMessageQueue;
     private final DatagridConfigProperties datagridConfigProperties;
 
-    public ControlMessagePublisher(HazelcastInstance hazelcastInstance, DatagridConfigProperties datagridConfigProperties) {
+    public DatagenMessagePublisher(HazelcastInstance hazelcastInstance, DatagridConfigProperties datagridConfigProperties) {
         this.datagridConfigProperties = datagridConfigProperties;
-        QueueConfig queueConfig = hazelcastInstance.getConfig().getQueueConfig(datagridConfigProperties.getControlQueueName());
+        QueueConfig queueConfig = hazelcastInstance.getConfig().getQueueConfig(datagridConfigProperties.getDatagenQueueName());
         queueConfig.setMaxSize(0); // unbounded
 
-        this.controlMessageQueue = hazelcastInstance.getQueue(datagridConfigProperties.getControlQueueName());
+        this.controlMessageQueue = hazelcastInstance.getQueue(datagridConfigProperties.getDatagenQueueName());
         this.controlMessageQueue.addItemListener(
                 new ItemListener<>() {
                     @Override
-                    public void itemAdded(ItemEvent<ControlMessage> item) {
-                        log.info("\n ** Queue ControlMessage Added: {}", item);
+                    public void itemAdded(ItemEvent<DatagenMessage> item) {
+                        log.info("\n ** Queue DatagenMessage Added: {}", item);
                     }
 
                     @Override
-                    public void itemRemoved(ItemEvent<ControlMessage> item) {
-                        log.info("Queue  ControlMessage Removed: {}", item);
+                    public void itemRemoved(ItemEvent<DatagenMessage> item) {
+                        log.info("Queue  DatagenMessage Removed: {}", item);
                     }
                 }, true);
     }
@@ -47,8 +47,8 @@ public final class ControlMessagePublisher<T extends ReportMessage> implements M
     @Override
     public void publish(ReportMessage reportMessage) {
         //TODO  - can this be done differently?
-        if (reportMessage instanceof ControlMessage) {
-            controlMessageQueue.add((ControlMessage)reportMessage);
+        if (reportMessage instanceof DatagenMessage) {
+            controlMessageQueue.add((DatagenMessage)reportMessage);
         }
     }
 }

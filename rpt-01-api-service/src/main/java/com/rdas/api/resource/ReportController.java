@@ -2,6 +2,7 @@ package com.rdas.api.resource;
 
 import com.rdas.api.service.MessageService;
 import com.rdas.common.message.model.ControlMessage;
+import com.rdas.common.message.model.StepDefinitionMark;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +29,7 @@ public class ReportController {
 
     @PostMapping("/start")
     public ResponseEntity<?> startProcess(@RequestParam String name) {
-        ControlMessage controlMessage = new ControlMessage(UUID.randomUUID().toString(), name);
+        ControlMessage controlMessage = new ControlMessage(UUID.randomUUID().toString(), StepDefinitionMark.ACCEPTED);
         String response = messageService.startProcess(controlMessage);
         return ResponseEntity.ok(response);
     }
