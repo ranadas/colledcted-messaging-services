@@ -5,20 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rdas</groupId>
-    <artifactId>rpt-02-orchestrator-service</artifactId>
+    <artifactId>rpt-05-distribution-service</artifactId>
 
-    <name>rpt-02-orchestrator-service</name>
-    <description>Spring Boot Orchestrator Service with hazelcast</description>
+    <name>rpt-05-distribution-service</name>
+    <description>Spring Boot File Distribution Service with hazelcast</description>
 
     <parent>
         <groupId>com.rdas</groupId>
-        <artifactId>collected-jms-services</artifactId>
+        <artifactId>collected-jms-services-parent</artifactId>
         <version>1.0.1</version>
     </parent>
 
-    <properties>
-        <hazelcast.version>3.12.5</hazelcast.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
