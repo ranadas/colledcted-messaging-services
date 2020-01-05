@@ -29,6 +29,12 @@ public class OrchestratorServiceImpl implements OrchestratorService {
                 // send a message to report generator service
                 DatagenMessage datagenMessage = new DatagenMessage(controlMessage.getUuid(), " Starting step 2", StepDefinitionMark.DATAGEN_START);
                 datagenMessageMessagePublisher.publish(datagenMessage);
+                break;
+            case DATAGEN_END:
+                // create a Report Gen Messge and push to Q
+                break;
+            default:
+                log.info("\n\n\n Invalid Message ControlMessage, this shouldn't really happen.");
         }
 
     }

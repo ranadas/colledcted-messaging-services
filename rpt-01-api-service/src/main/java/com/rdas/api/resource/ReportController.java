@@ -27,6 +27,7 @@ public class ReportController {
         return ResponseEntity.ok("WIP");
     }
 
+    //curl -X POST localhost:8081/rpt/start?name=rdas
     @PostMapping("/start")
     public ResponseEntity<?> startProcess(@RequestParam String name) {
         ControlMessage controlMessage = new ControlMessage(UUID.randomUUID().toString(), StepDefinitionMark.ACCEPTED);
