@@ -1,7 +1,5 @@
 package com.rdas.common.message.model;
 
-import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 
 public class DatagenMessage extends ReportMessage {

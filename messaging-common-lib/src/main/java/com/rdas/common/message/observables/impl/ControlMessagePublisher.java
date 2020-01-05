@@ -29,7 +29,7 @@ public class ControlMessagePublisher<T extends ReportMessage> implements Message
                 new ItemListener<>() {
                     @Override
                     public void itemAdded(ItemEvent<ControlMessage> item) {
-                        log.info("Queue ControlMessage Added: {}", item);
+                        log.info("\n ** Queue ControlMessage Added: {}", item);
                     }
 
                     @Override
