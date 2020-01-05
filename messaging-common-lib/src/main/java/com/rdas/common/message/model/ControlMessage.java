@@ -4,10 +4,10 @@ import lombok.Getter;
 
 public class ControlMessage extends ReportMessage {
     @Getter
-    private final String name;
+    private final StepDefinitionMark stepDefinitionMark;
 
-    public ControlMessage(String uuid, String name) {
+    public ControlMessage(String uuid, StepDefinitionMark step) {
         super(uuid);
-        this.name = name;
+        this.stepDefinitionMark = step;
     }
 }
