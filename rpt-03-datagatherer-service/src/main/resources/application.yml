@@ -1,0 +1,15 @@
+server:
+  port: 8083
+  servlet:
+    context-path: "/gatherer"
+
+spring:
+  application:
+    name: reporting-datagatherer
+
+reporting:
+  queues:
+    control-queue-name: REA_QUEUE
+    datagen-queue-name: DATA_GEN_QUEUE
+    rpt-queue-name: REPORT_GEN_QUEUE
+    distro-queue-name: DISTRIBUTION_QUEUE

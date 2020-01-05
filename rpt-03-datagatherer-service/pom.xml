@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rdas</groupId>
-    <artifactId>rpt-02-orchestrator-service</artifactId>
+    <artifactId>rpt-03-datagatherer-service</artifactId>
 
-    <name>rpt-02-orchestrator-service</name>
-    <description>Spring Boot Orchestrator Service with hazelcast</description>
+    <name>rpt-03-datagatherer-service</name>
+    <description>Spring Boot Data Gatherer with hazelcast</description>
 
     <parent>
         <groupId>com.rdas</groupId>
@@ -16,9 +16,6 @@
         <version>1.0.1</version>
     </parent>
 
-    <properties>
-        <hazelcast.version>3.12.5</hazelcast.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -18,13 +18,14 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <hazelcast.version>3.12.5</hazelcast.version>
     </properties>
 
     <modules>
         <module>messaging-common-lib</module>
         <module>rpt-01-api-service</module>
         <module>rpt-02-orchestrator-service</module>
-
+        <module>rpt-03-datagatherer-service</module>
     </modules>
     <dependencyManagement>
         <dependencies>

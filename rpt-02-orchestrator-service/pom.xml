@@ -16,9 +16,6 @@
         <version>1.0.1</version>
     </parent>
 
-    <properties>
-        <hazelcast.version>3.12.5</hazelcast.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
