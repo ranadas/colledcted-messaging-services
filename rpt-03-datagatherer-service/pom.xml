@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rdas</groupId>
-    <artifactId>spring-datagrid-service</artifactId>
+    <artifactId>rpt-02-orchestrator-service</artifactId>
 
-    <name>spring-datagrid-service</name>
-    <description>Spring Hazelcast</description>
+    <name>rpt-02-orchestrator-service</name>
+    <description>Spring Boot Orchestrator Service with hazelcast</description>
 
     <parent>
         <groupId>com.rdas</groupId>
@@ -17,17 +17,16 @@
     </parent>
 
     <properties>
-<!--        <hazelcast.version>4.0-BETA-2</hazelcast.version>-->
         <hazelcast.version>3.12.5</hazelcast.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-netty</artifactId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -40,9 +39,9 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.hazelcast</groupId>
-            <artifactId>hazelcast</artifactId>
-            <version>${hazelcast.version}</version>
+            <groupId>com.rdas</groupId>
+            <artifactId>messaging-common-lib</artifactId>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.hazelcast</groupId>
@@ -75,10 +74,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
         </dependency>
     </dependencies>
 

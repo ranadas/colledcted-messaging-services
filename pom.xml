@@ -24,8 +24,6 @@
         <module>messaging-common-lib</module>
         <module>rpt-01-api-service</module>
         <module>rpt-02-orchestrator-service</module>
-        <module>spring-datagrid-service</module>
-        <module>spring-datagrid-listener</module>
 
     </modules>
     <dependencyManagement>

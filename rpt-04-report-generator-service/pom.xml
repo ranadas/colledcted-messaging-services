@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rdas</groupId>
-    <artifactId>spring-jms-producer</artifactId>
+    <artifactId>rpt-02-orchestrator-service</artifactId>
 
-    <name>spring-jms-producer</name>
-    <description>Spring JMS Producer</description>
+    <name>rpt-02-orchestrator-service</name>
+    <description>Spring Boot Orchestrator Service with hazelcast</description>
 
     <parent>
         <groupId>com.rdas</groupId>
@@ -16,18 +16,37 @@
         <version>1.0.1</version>
     </parent>
 
+    <properties>
+        <hazelcast.version>3.12.5</hazelcast.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-activemq</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.springframework.integration</groupId>
-            <artifactId>spring-integration-jms</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.rdas</groupId>
+            <artifactId>messaging-common-lib</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-spring</artifactId>
+            <version>${hazelcast.version}</version>
         </dependency>
 
         <dependency>
