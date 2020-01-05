@@ -12,4 +12,13 @@ public class DatagridConfigProperties {
     @Getter @Setter
     private String controlQueueName;
 
+    @Getter @Setter
+    private String datagenQueueName;
+
+    @Getter @Setter
+    private String rptQueueName;
+
+    @Getter @Setter
+    private String distroQueueName;
+
 }
