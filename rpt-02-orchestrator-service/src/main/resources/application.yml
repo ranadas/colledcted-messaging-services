@@ -1,0 +1,15 @@
+server:
+  port: 8082
+  servlet:
+    context-path: "/ctrl"
+
+spring:
+  application:
+    name: reporting-orchestrator
+
+reporting:
+  queues:
+    control-queue-name: REA_QUEUE
+    datagen-queue-name: DATA_GEN_QUEUE
+    rpt-queue-name: REPORT_GEN_QUEUE
+    distro-queue-name: DISTRIBUTION_QUEUE
