@@ -1,12 +1,14 @@
 package com.rdas.common.message.model;
 
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 
-public class ControlMessage extends ReportMessage {
+public class DatagenMessage extends ReportMessage {
     @Getter
     private final String name;
 
-    public ControlMessage(String uuid, String name) {
+    public DatagenMessage(String uuid, String name) {
         super(uuid);
         this.name = name;
     }
